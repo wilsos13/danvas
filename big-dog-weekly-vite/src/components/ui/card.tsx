@@ -1,10 +1,11 @@
-import * as React from 'react'
-import { cn } from './utils'
+cat > src/components/ui/card.tsx <<'EOF'
+import React from 'react';
 
-export function Card({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('bg-white border rounded-2xl', className)} {...props} />
+export function Card({ className = '', ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={`rounded-xl border bg-white ${className}`} {...props} />;
 }
 
-export function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-  return <div className={cn('p-4', className)} {...props} />
+export function CardContent({ className = '', ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={`p-4 ${className}`} {...props} />;
 }
+EOF
